@@ -1,6 +1,14 @@
-# Arvak Labs — Ideias que viram realidade
+# Arvak Labs — Ideas Made Real (v1.1)
 
 Portal independente de aplicativos, ferramentas, mods e experimentos, com catálogo local, pesquisa, filtros, páginas de projetos, portfólio e temas claro/escuro.
+
+## Idiomas / Languages
+
+English is the default. The header includes an EN / PT-BR language selector that saves the visitor’s preference in localStorage. Interface strings are in `src/data/i18n.js`; bilingual project descriptions are in `src/data/projects.js`.
+
+## Projetos / Projects
+
+The catalog includes 10 publicly confirmed repositories as of October 23, 2026. Pages links are included only for repositories showing `has_pages: true` in GitHub metadata. This is not proof of an accessible deployment. Test the links individually before promotion.
 
 ## Stack
 
@@ -70,7 +78,7 @@ Veja [COMO_ATUALIZAR.md](COMO_ATUALIZAR.md) para exemplos.
 public/favicon.svg
 public/og-cover.svg
 src/components/ProjectCard.vue
-src/data/{projects,site,updates}.js
+src/data/{projects,site,updates,i18n}.js
 src/views/{Home,Explore,ProjectDetail,About,Portfolio,NotFound}.vue
 src/App.vue
 src/main.js
@@ -91,3 +99,9 @@ O portal não depende da API do GitHub em execução. Os links de projetos são 
 ## Contribuição e problemas
 
 Abra um issue no repositório principal com descrição e etapas para reproduzir. Alterações podem ser propostas em pull requests. Licença não definida para este repositório; nenhuma permissão geral de reutilização é presumida.
+
+## Atualizar sem usar terminal (GitHub web)
+
+Como o repositório já existe, a forma mais simples é abrir a página principal do projeto no GitHub e usar **Add file → Upload files**, enviando a estrutura atualizada; porém, o uploader de navegador pode não incluir arquivos/pastas ocultos como `.github/`. Confira se `.github/workflows/deploy.yml` aparece no repositório. Se estiver faltando, crie esse arquivo com **Add file → Create new file** e digite o caminho completo. Em Settings → Pages, selecione **GitHub Actions**. Na aba Actions, confira se o workflow compilou e publicou o site. Não envie apenas o ZIP como um arquivo único: ele precisa ser extraído antes do upload.
+
+Para substituir arquivos já existentes, abra cada um no GitHub, clique no ícone de edição, substitua o conteúdo e confirme o commit. Para muitos arquivos de uma só vez, GitHub Desktop ou github.dev podem ser mais práticos do que o upload web.

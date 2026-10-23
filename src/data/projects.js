@@ -1,36 +1,17 @@
-// Dados editoriais: revise status e URLs antes da publicação. Somente sites explicitamente confirmados estão aqui.
-export const projects = [
-  {
-    id:'nexo',slug:'nexo',name:'NEXO',monogram:'NX',categories:['Aplicativos','Pessoal','Experimentos'],
-    short:'Um multiverso pessoal para visualizar decisões, possibilidades e linhas do tempo.',
-    description:'Uma linha do tempo interativa e local-first para registrar a trajetória real e explorar ramificações hipotéticas. O objetivo é tornar relações de causa e efeito mais fáceis de visualizar.',
-    problem:'É difícil comparar experiências reais com caminhos que poderiam ter acontecido.',
-    features:['Linha do tempo principal e realidades alternativas','Ramificações originadas de eventos','Exploração visual de escolhas e possibilidades'],
-    technologies:['HTML','JavaScript'],status:'Experimental',featured:true,updated:'2026-10-23',version:'',
-    liveUrl:'https://danielrosajr.github.io/nexo-personal-multiverse/',
-    repoUrl:'https://github.com/danielrosajr/nexo-personal-multiverse',
-    challenges:['Representar linhas do tempo que se ramificam sem perder legibilidade'],
-    learnings:['Prototipagem de interfaces interativas e experiência local-first']
-  },
-  {
-    id:'hidrocondo',slug:'hidrocondo',name:'HidroCondo',monogram:'HC',categories:['Aplicativos','Utilidades'],
-    short:'Acompanhamento de leituras de água para a rotina de condomínios.',
-    description:'Aplicativo voltado ao registro e acompanhamento de leituras de hidrômetros, com organização do histórico e recursos para facilitar o compartilhamento das informações.',
-    problem:'Leituras periódicas de água podem ficar espalhadas em anotações e mensagens.',
-    features:['Registro de leituras','Histórico de medições','Fluxos pensados para a rotina de condomínios'],
-    technologies:['JavaScript','Supabase'],status:'Em desenvolvimento',featured:true,updated:'2026-10-20',version:'',
-    liveUrl:'',repoUrl:'https://github.com/danielrosajr/HidroCondo',
-    challenges:['Modelagem de permissões e organização de leituras'],learnings:['Interfaces guiadas por tarefas reais']
-  },
-  {
-    id:'civica',slug:'civica',name:'Cívica',monogram:'CV',categories:['Aplicativos','Educação','Código aberto'],
-    short:'Educação política e cidadania acessível, gratuita e independente.',
-    description:'Uma plataforma de educação cívica criada para tornar temas de cidadania mais compreensíveis, especialmente para quem está começando ou utiliza o celular como dispositivo principal.',
-    problem:'Assuntos importantes de cidadania costumam ser apresentados com linguagem complicada.',
-    features:['Conteúdo introdutório acessível','Experiência focada em celulares','Abordagem apartidária e gratuita'],
-    technologies:['JavaScript'],status:'Experimental',featured:true,updated:'2026-10-21',version:'',
-    liveUrl:'',repoUrl:'https://github.com/danielrosajr/civica',
-    challenges:['Tornar conteúdo complexo compreensível sem distorcer informações'],
-    learnings:['Acessibilidade e comunicação educativa']
-  }
+// Curated from public repositories (2026-10-23). A liveUrl is set only when GitHub Pages is enabled.
+// GitHub Pages may still require Settings > Pages to publish correctly; check the live link before announcing it.
+const root='https://github.com/danielrosajr/'
+const pages='https://danielrosajr.github.io/'
+const p=(id,name,monogram,categories,technologies,description,short,extra={})=>({id,slug:id,name,monogram,categories,technologies,short,description,repoUrl:root+(extra.repo||id),liveUrl:extra.pages?pages+(extra.repo||id)+'/':'',status:extra.status||'Experimental',featured:!!extra.featured,updated:extra.updated||'',features:extra.features||[],...extra,repo:undefined,pages:undefined})
+export const projects=[
+ p('nexo','NEXO','NX',['Aplicativos','Pessoal','Experimentos'],['HTML','JavaScript'],{en:'A local-first personal multiverse with a main timeline and branching alternate realities. Explore how turning points can lead to different paths.', 'pt-BR':'Um multiverso pessoal local-first com uma linha do tempo principal e ramificações de realidades alternativas.'},{en:'Personal timelines, choices and alternate realities.', 'pt-BR':'Linhas do tempo, escolhas e realidades alternativas.'},{repo:'nexo-personal-multiverse',pages:true,featured:true,updated:'2026-10-23',features:[{en:'Main timeline and alternate branches', 'pt-BR':'Linha principal e ramificações alternativas'},{en:'Interactive exploration of possibilities','pt-BR':'Exploração interativa de possibilidades'}]}),
+ p('hidrocondo','HidroCondo','HC',['Aplicativos','Utilidades'],['JavaScript','Supabase'],{en:'A web tool for organizing water-meter readings, usage history and condominium reporting workflows.','pt-BR':'Ferramenta para registrar leituras de hidrômetros, acompanhar histórico de consumo e organizar relatórios condominiais.'},{en:'Water readings and tracking for condominiums.','pt-BR':'Leituras e acompanhamento de água em condomínios.'},{repo:'HidroCondo',pages:true,featured:true,updated:'2026-10-20'}),
+ p('civica','Cívica','CV',['Aplicativos','Educação','Código aberto'],['JavaScript'],{en:'A free, accessible, nonpartisan civic education platform designed for mobile use and first-time learners.','pt-BR':'Plataforma gratuita e apartidária de educação política e cidadania, acessível no celular e voltada a iniciantes.'},{en:'Clear, approachable civic education for everyone.','pt-BR':'Educação cívica acessível e gratuita para todos.'},{pages:true,featured:true,updated:'2026-10-21'}),
+ p('contraponto','Contraponto','CP',['Aplicativos','Pessoal','Experimentos'],['JavaScript'],{en:'A personal reasoning-map experiment that organizes ideas, counterarguments and different perspectives into connected blocks.','pt-BR':'Experimento de mapa pessoal de raciocínios, organizando ideias, contrapontos e perspectivas em blocos conectados.'},{en:'Explore arguments and opposing perspectives.','pt-BR':'Explore argumentos e perspectivas diferentes.'},{pages:true,featured:true,updated:'2026-10-23'}),
+ p('vozloop','VozLoop','VL',['Aplicativos','Utilidades'],['JavaScript','PWA'],{en:'A free local-first web app for recording layered vocals and creating acapella loops, with no account required.','pt-BR':'Aplicativo gratuito e local-first para gravar vozes em camadas e criar loops de acapella, sem cadastro.'},{en:'Layer vocals and create acapella loops.','pt-BR':'Grave vocais em camadas e crie loops de acapella.'},{repo:'VozLoop',pages:true,updated:'2026-10-21'}),
+ p('condominio-encomendas','Condomínio Encomendas','CE',['Aplicativos','Utilidades'],['HTML','JavaScript'],{en:'A condominium package management app with delivery tracking and easy communication through WhatsApp.','pt-BR':'Aplicativo de controle de encomendas para condomínios, com acompanhamento de entregas e compartilhamento por WhatsApp.'},{en:'Simplify package tracking at the front desk.','pt-BR':'Simplifique o controle de encomendas na portaria.'},{pages:true,updated:'2026-10-16'}),
+ p('worldbox-the-unrelenting','The Unrelenting','TU',['Jogos','Mods'],['C#','WorldBox'],{en:'A WorldBox horror mod inspired by It Follows: a mysterious and relentless entity hunts cursed inhabitants.','pt-BR':'Mod de terror para WorldBox inspirado em It Follows: uma entidade misteriosa e implacável persegue habitantes amaldiçoados.'},{en:'A relentless supernatural pursuit inside WorldBox.','pt-BR':'Uma perseguição sobrenatural implacável no WorldBox.'},{updated:'2026-10-18'}),
+ p('worldbox-the-shy-guy','SCP-096: The Shy Guy','096',['Jogos','Mods'],['C#','WorldBox'],{en:'A WorldBox mod inspired by SCP-096, featuring witness-triggered pursuit and horror mechanics.','pt-BR':'Mod de WorldBox inspirado no SCP-096, com perseguição iniciada por testemunhas e mecânicas de terror.'},{en:'The Shy Guy brings SCP horror to WorldBox.','pt-BR':'O terror do SCP-096 chega ao WorldBox.'},{updated:'2026-10-21'}),
+ p('tickets-automation','Tickets Automation','TA',['Automação','Utilidades'],['Python','Selenium'],{en:'An earlier Python/Selenium automation project for gathering employee support tickets and preparing a text summary for a team manager.','pt-BR':'Projeto anterior de automação em Python/Selenium para consultar chamados de colaboradores e preparar um resumo para a gestão.'},{en:'Automating support ticket collection and reporting.','pt-BR':'Automação de coleta e relatório de chamados.'},{updated:'2023-07-06'}),
+ p('project-fashion-driven','Fashion Driven Project','FD',['Experimentos','Aplicativos'],['HTML','CSS','JavaScript','Axios'],{en:'A fashion website simulation exploring a frontend built with HTML, CSS, JavaScript, Axios and API integrations.','pt-BR':'Simulação de site de moda com HTML, CSS, JavaScript, Axios e integração de APIs.'},{en:'A fashion storefront and API integration experiment.','pt-BR':'Experimento de loja de moda com integração de APIs.'},{updated:'2022-11-10'})
 ]

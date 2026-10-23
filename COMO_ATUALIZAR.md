@@ -69,3 +69,19 @@ Confira **Actions** no GitHub e abra o site após a execução ficar verde. Para
 - **Erro 404 em página de projeto:** use URLs com `/#/projeto/slug`, porque o portal utiliza roteamento por hash.
 - **Workflow falhou:** veja o passo com erro em **Actions**. Verifique `npm install`, `package-lock.json` e a seleção **Settings → Pages → GitHub Actions**.
 - **Push negado:** verifique o remote (`git remote -v`) e autentique com `gh auth login` ou SSH, sem colocar senhas no repositório.
+
+
+## Novo na versão 1.1: internacionalização
+
+- Inglês padrão, português brasileiro opcional (seletor EN / PT-BR no topo).
+- Adicione ou altere as traduções da interface em `src/data/i18n.js`.
+- Para textos de projeto, use `short:{en:"...", "pt-BR":"..."}` e `description` com o mesmo formato.
+- Os links Pages aparecem em `src/data/projects.js` apenas para projetos com Pages habilitado no GitHub; confira a publicação antes de anunciar.
+
+## Atualização pelo navegador
+
+1. Extraia o ZIP; não carregue somente o arquivo compactado.
+2. Atualize os arquivos do diretório `src/`, `index.html`, `README.md` e `COMO_ATUALIZAR.md` no repositório GitHub.
+3. Certifique-se de que `.github/workflows/deploy.yml` existe no repositório; pode precisar criá-lo manualmente, pois a pasta é oculta.
+4. Acesse Settings → Pages → Source → GitHub Actions.
+5. Confirme a execução verde do workflow na aba Actions e teste o endereço do site.

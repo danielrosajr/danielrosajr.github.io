@@ -8,6 +8,7 @@ import About from './views/About.vue'
 import Portfolio from './views/Portfolio.vue'
 import NotFound from './views/NotFound.vue'
 import './style.css'
+import { language, t } from './data/i18n.js'
 
 const router = createRouter({
   history: createWebHashHistory(),
@@ -22,5 +23,5 @@ const router = createRouter({
     {path:'/:pathMatch(.*)*',component:NotFound,meta:{title:'Página não encontrada'}}
   ]
 })
-router.afterEach(to=>{document.title = `${to.meta.title || 'Projetos'} · Arvak Labs`})
+router.afterEach(to=>{document.title = `${to.params.slug || t('projects')} · Arvak Labs`})
 createApp(App).use(router).mount('#app')

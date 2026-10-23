@@ -7,3 +7,5 @@
 @media(max-width:400px){.hero-actions .button{width:100%}.category-grid{grid-template-columns:1fr}.category-symbol{width:43px;height:43px}.detail-actions .button{width:100%}}
 @media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;animation:none!important;transition:none!important}}
 @media print{.site-header,.site-footer,.button,.hero-art{display:none!important}body{background:white;color:black}.container{width:100%}.skill-card,.project-card{break-inside:avoid}}
+/* Language control: available on mobile as well. */
+.language-select{display:flex;align-items:center}.language-select select{min-height:39px;border:1px solid var(--line);background:var(--surface);color:var(--text);border-radius:10px;padding:0 8px;font-size:12px;font-weight:800;cursor:pointer}.header-tools{align-items:center}.language-select select:focus-visible{outline:3px solid var(--green);outline-offset:2px}
