@@ -1,0 +1,1 @@
+<script setup>import {RouterLink} from 'vue-router'</script><template><div class="container empty-state"><div>404</div><h1>Essa rota saiu do mapa.</h1><p>Mas ainda existem muitas ideias por aqui.</p><RouterLink class="button primary" to="/">Voltar ao início ↗</RouterLink></div></template>
